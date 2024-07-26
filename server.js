@@ -1,9 +1,8 @@
-import dotenv from "dotenv"
-dotenv.config();
-
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -16,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //Include data routes here
 const users = require('./controllers/users');
 const accounts = require('./controllers/accounts');
-const transactions = require('./controllers/transcations');
+const transactions = require('./controllers/transactions');
 
 app.use('./users', users);
 app.use('./accounts', accounts);
