@@ -14,7 +14,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //Include data routes here
-//
+const users = require('./controllers/users');
+const accounts = require('./controllers/accounts');
+const transactions = require('./controllers/transcations');
+
+app.use('./users', users);
+app.use('./accounts', accounts);
+app.use('/transactions', transactions);
+
 //
 
 app.get("/", (req, res) => {
